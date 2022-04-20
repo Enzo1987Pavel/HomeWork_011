@@ -7,8 +7,10 @@
 <body>
 
     <h1>Все кандидаты</h1>
-    {% for candidate in candidates %}
-       <p><a href="{{ url_for('candidates_page') }}">{{ candidate.name }}</a></p>
+
+    {% for cand in candidate %}
+        <p><a href="{{ url_for('candidates_page') }}">{{ cand.name }}</a></p>
     {% endfor %}
+
 </body>
 </html>
