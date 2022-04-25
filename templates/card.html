@@ -5,13 +5,18 @@
     <title>Карточка кандидата</title>
 </head>
 <body>
+    {% if "not_found" in candidate.keys() %}
+        <h1>{{ candidate.not_found }}</h1>
+        <p>Для перехода на главную страницу <a href="/">щелкните здесь</a></p>
+    {% else %}
+        <h1>{{ candidate.name }}</h1>
+        <p>Должность: {{ candidate.position }}</p>
+        <img src="{{ candidate.picture }}" width=200 alt="картинка кандидата"/>
+        <p>Умения: {{ candidate.skills }}</p>
+        <hr>
+        <p>Для перехода на главную страницу <a href="/">щелкните здесь</a></p>
+    {% endif %}
 
-    {% for cand in candidate %}
-        <h1>{{ cand.name }}</h1>
-        <p>{{ cand.position }}</p>
-        <img src="{{ cand.picture }}" width=200 alt="картинка кандидата"/>
-        <p>{{ cand.skills }}</p>
-    {% endfor %}
 
 </body>
 </html>

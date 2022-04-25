@@ -6,10 +6,9 @@
 </head>
 <body>
 
-    <h1>Все кандидаты</h1>
-
+    <h1>Список всех кандидатов:</h1>
     {% for cand in candidate %}
-        <p><a href="{{ url_for('candidates_page') }}">{{ cand.name }}</a></p>
+        <p><a href="/candidates/{{ cand.id }}">{{ cand.name }}</a></p>
     {% endfor %}
 
 </body>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск кандидатов по умению</title>
+</head>
+<body>
+    {% if candidate|length > 0 %}
+        <h1>Найдено кандидатов с умением &laquo;<i>{{ skill }}</i>&raquo;: {{ cand_len }}</h1>
+
+        {% for cand in candidate %}
+            <p><a href="/candidates/{{ cand.id }}">{{ cand.name }}</a></p>
+        {% endfor %}
+    {% else %}
+        <h1>Кандидатов с указанным умением не найдено!</h1>
+    {% endif %}
+
+    <hr>
+    <p>Для перехода на главную страницу <a href="/">щелкните здесь</a></p>
+
+</body>
+</html>
